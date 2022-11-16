@@ -4,7 +4,7 @@ import React from "react";
 import {Container} from "./Container";
 
 export const Skills = ()=>{
-    return <Container classNames="bg-gray-200 m-auto h-2/4 w-full md:w-3/4 p-6 rounded-2xl grid md:grid-cols-3 grid-cols-2 gap-5 overflow-hidden">
+    return <Container classNames="bg-gray-200 m-auto h-11/12 w-full md:w-3/4 p-6 rounded-2xl grid md:grid-cols-3 grid-cols-2 gap-5 overflow-hidden">
             <div className="text-center text-2xl md:col-span-3 col-span-2">Skills</div>
             <Fade direction={"left"} triggerOnce>
                 <Skill title="K8s"/>

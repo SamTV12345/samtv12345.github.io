@@ -4,6 +4,7 @@ import {Title} from "./components/Title";
 import {Skills} from "./components/Skills";
 import {Projects} from "./components/Projects";
 import {Footer} from "./components/Footer";
+import {News} from "./components/News";
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
         <Title/>
         <Skills/>
         <Projects/>
+        <News/>
         <Footer/>
     </React.Fragment>
 }

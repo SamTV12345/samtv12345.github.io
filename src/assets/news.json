@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "Pihole on Ubuntu",
+    "description": "The ubuntu version has less and less severe vulnerabilities and can be used exactly like the official image.",
+    "badge": "release"
+  },
+  {
+    "id": 1,
+    "name": "Pihole on Alpine",
+    "description": "This version has some performance problems and requests are looked up multiple times. This results in an unresponse dns service currently",
+    "badge": "error"
+  },
+  {
+    "id": 2,
+    "name": "SmartOrganizr regular dependency update",
+    "description": "The dependencies of Smartorganizr were updated to the latest version",
+    "badge": "release"
+  },
+  {
+    "id": 3,
+    "name": "StackEdit React",
+    "description": "Features a fully functional Markdown editor with code highlighting, GitHub sync etc.",
+    "badge": "beta"
+  }
+]

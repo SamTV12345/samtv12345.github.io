@@ -30,7 +30,7 @@ const Root = () => {
                             value: "#000",
                         },
                     },
-                    fpsLimit: 120,
+                    fpsLimit: 60,
                     interactivity: {
                         events: {
                             onClick: {
@@ -87,8 +87,8 @@ const Root = () => {
                                 enable: true,
                                 area: 800
                             },
-                            max:50,
-                            value: 80,
+                            max:20,
+                            value: 10,
                         },
                         opacity: {
                             value: 0.5,
@@ -136,6 +136,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 )
 
 import { useCallback } from "react";
-import type { Container, Engine } from "tsparticles-engine";
+import type { Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
