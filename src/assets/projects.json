@@ -1,0 +1,22 @@
+[
+  {
+    "link": "https://github.com/SamTV12345/ElectronUtils",
+    "name": "ElectronUtils",
+    "description": "A powerful desktop application to support your everyday dev job."
+  },
+  {
+    "link": "https://github.com/SamTV12345/stackedit-react",
+    "name": "StackEdit React",
+    "description": "Markdown editor with GitHub sync."
+  },
+  {
+    "link": "https://gitlab.com/samuel1998.schwanzer/SmartOrganizr",
+    "name": "SmartOrganizr",
+    "description": "A React web application to manage your music sheets"
+  },
+  {
+    "link": "https://github.com/SamTV12345/securepihole",
+    "name": "Secure Pihole",
+    "description": "A secure alternative to the official docker image running on Ubuntu."
+  }
+]
