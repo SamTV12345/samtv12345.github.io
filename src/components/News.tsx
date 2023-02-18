@@ -6,7 +6,7 @@ import {BadgeSelector} from "./badges/BadgeSelector";
 export const News = ()=>{
     const [id, setIdOfNews] = useState<number>(0)
 
-    return <Container
+    return <Container id="news"
         classNames="bg-gray-200 m-auto h-3/4 p-6 rounded-2xl grid grid-cols-2 gap-5  overflow-auto w-full md:w-3/4 news">
         <div className="h-full grid grid-cols-1 auto-rows-min gap-4" id="news">
             <h2 className="text-center text-xl">Latest news</h2>
