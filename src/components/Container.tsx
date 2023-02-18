@@ -1,13 +1,15 @@
-import {FC} from "react";
+import React, {FC} from "react";
+import {scrollToElement} from "./Title";
 
 interface ContainerProps {
     children:any,
-    classNames: string
+    classNames: string,
+    id: string
 }
 
 
-export const Container:FC<ContainerProps> = ({children, classNames})=>{
-    return <div className="flex h-screen relative" style={{zIndex:100}}>
+export const Container:FC<ContainerProps> = ({children, classNames, id})=>{
+    return <div className="flex h-screen relative" style={{zIndex:100}} id={id}>
         <div className={classNames}>
             {children}
         </div>

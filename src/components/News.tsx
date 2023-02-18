@@ -7,8 +7,8 @@ export const News = ()=>{
     const [id, setIdOfNews] = useState<number>(0)
 
     return <Container
-        classNames="bg-gray-200 m-auto h-3/4 p-6 rounded-2xl grid grid-cols-2 gap-5  overflow-auto w-full md:w-3/4">
-        <div className="h-full grid grid-cols-1 auto-rows-min gap-4">
+        classNames="bg-gray-200 m-auto h-3/4 p-6 rounded-2xl grid grid-cols-2 gap-5  overflow-auto w-full md:w-3/4 news">
+        <div className="h-full grid grid-cols-1 auto-rows-min gap-4" id="news">
             <h2 className="text-center text-xl">Latest news</h2>
             {news.map(n=><button className={`${id===n.id?'bg-gray-300':'bg-gray-100'} rounded text-left pl-1 p-2`} onClick={()=>setIdOfNews(n.id)}>{n.name}<BadgeSelector type={n.badge as any} classname={"ml-2"}/></button>)}
 

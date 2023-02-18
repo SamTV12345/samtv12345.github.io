@@ -12,7 +12,8 @@ const customAnimation = keyframes`
 `;
 
 interface BlendInComponentProps {
-    children:any
+    children:any,
+    id: string
 }
 
 export const BlendInComponent:FC<BlendInComponentProps> = ({children})=> {

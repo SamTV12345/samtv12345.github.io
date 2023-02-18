@@ -8,8 +8,8 @@
   {
     "id": 1,
     "name": "Pihole on Alpine",
-    "description": "This version has some performance problems and requests are looked up multiple times. This results in an unresponse dns service currently",
-    "badge": "error"
+    "description": "The performance problems were resolved. It is now much faster and more stable than the default alpine debian image.",
+    "badge": "release"
   },
   {
     "id": 2,
