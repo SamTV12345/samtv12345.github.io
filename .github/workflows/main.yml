@@ -27,6 +27,8 @@ jobs:
           path: node_modules
           # An explicit key for restoring and saving the cache
           key: ${{ runner.os }}-stackedit-${{ hashFiles('**/pnpm-lock.json') }}
+      - name: Install dependencies
+        run: pnpm i
       - name: Build app
         run: pnpm run build
       - name: Upload artifact
