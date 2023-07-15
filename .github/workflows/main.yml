@@ -27,7 +27,6 @@ jobs:
           key: ${{ runner.os }}-stackedit-${{ hashFiles('**/pnpm-lock.json') }}
       - name: Build app
         run: pnpm run build
-        working-directory: ./presentation
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
