@@ -7,13 +7,17 @@ import Link from '../components/Link.astro'
 <Layout title="My Socials ♥">
     <main class="">
         <div class="centered">
-            <h1><span class="text-gradient">SamTV12345</span></h1>
-            <Link title="GitHub" body="test" link="https://github.com/samtv12345" href="https://github.com/samtv12345"/>
-            <Link title="Snapchat" body=""/>
+            <div id="header-logo">
+                <img src="/bild_rose.jpg"/>
+                <img class="logo" src="/image.png"/>
+            </div>
+            <h1><span class="text-gradient">samtv1998</span></h1>
+            <Link title="GitHub" body="test"  href="https://github.com/samtv12345"/>
+            <Link title="Snapchat" body=""  href="https://snapchat.com/add/samtv1998"/>
 
-            <Link title="Instagram"/>
-            <Link title="YouTube"/>
-            <Link title="Twitch"/>
+            <Link title="Instagram" href="https://instagram.com/samtv1998/"/>
+            <Link title="YouTube" href="https://www.youtube.com/@samtv1998"/>
+            <Link title="Twitch" href="https://www.twitch.tv/samtv1998/"/>
 
             <iframe aria-label="video iframe" title="url" class="TwitchVideo" src="https://player.twitch.tv/?channel=samtv1998&amp;parent=github.io&amp;autoplay=false" frameborder="0" scrolling="no" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="overflow: hidden;"></iframe>
         </div>
@@ -27,6 +31,27 @@ import Link from '../components/Link.astro'
         color: white;
     }
 
+    #header-logo > img:first-child {
+        width: 60vh;
+        border-radius: 50px;
+        border: none;
+        padding-top: 20px;
+    }
+    #header-logo {
+        position:relative;
+    }
+
+    .logo {
+        position: absolute;
+        bottom: -9%;
+        right: 40%;
+
+    width: 130px;
+    height: 130px;
+    border-radius: 10000px;
+    opacity: 1;
+    border: 2px solid rgb(255, 255, 255);
+    }
     #background {
         position: absolute;
         background-image: url("/bild_zugeschnitten.jpg");
@@ -45,6 +70,7 @@ import Link from '../components/Link.astro'
         background-size: cover;
         backdrop-filter: blur(100px);
     }
+
     .centered {
     display: flex;
     flex-direction: column;
@@ -59,7 +85,7 @@ import Link from '../components/Link.astro'
     }
 
     main > div {
-    width: 80vw;
+    width: 50vw;
     border-radius: 60px;
     background-image: linear-gradient(rgb(236, 21, 103), rgb(223, 16, 18));
     }
