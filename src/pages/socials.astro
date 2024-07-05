@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Link from '../components/Link.astro'
+import YouTubeLogo from '../components/Youtube.astro'
+import TwitchLogo from '../components/Twitch.astro'
+import InstaLogo from '../components/Insta.astro'
+import SnapLogo from '../components/Snapchat.astro'
+import GitHubLogo from '../components/Github.astro'
 ---
 
 
@@ -12,12 +17,19 @@ import Link from '../components/Link.astro'
                 <img class="logo" src="/image.png"/>
             </div>
             <h1><span class="text-gradient">samtv1998</span></h1>
-            <Link title="GitHub" body="test"  href="https://github.com/samtv12345"/>
-            <Link title="Snapchat" body=""  href="https://snapchat.com/add/samtv1998"/>
+            <Link title="GitHub" body=""  href="https://github.com/samtv12345">
+                <GitHubLogo/>
+             </Link>
+            <Link title="Snapchat" body=""  href="https://snapchat.com/add/samtv1998">
+                <SnapLogo/>
+            </Link>
 
-            <Link title="Instagram" href="https://instagram.com/samtv1998/"/>
-            <Link title="YouTube" href="https://www.youtube.com/@samtv1998"/>
-            <Link title="Twitch" href="https://www.twitch.tv/samtv1998/"/>
+            <Link title="Instagram" href="https://instagram.com/samtv1998/">
+                <InstaLogo/></Link>
+            <Link title="YouTube" href="https://www.youtube.com/@samtv1998">
+                <YouTubeLogo/></Link>
+            <Link title="Twitch" href="https://www.twitch.tv/samtv1998/">
+                <TwitchLogo/></Link>
 
             <iframe aria-label="video iframe" title="url" class="TwitchVideo" src="https://player.twitch.tv/?channel=samtv1998&amp;parent=samtv12345.github.io&amp;autoplay=false" frameborder="0" scrolling="no" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="overflow: hidden;"></iframe>
         </div>
@@ -29,6 +41,11 @@ import Link from '../components/Link.astro'
 <style>
     h1 {
         color: white;
+    }
+
+    iframe {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     #header-logo > img:first-child {
