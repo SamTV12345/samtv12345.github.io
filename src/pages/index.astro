@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to my homepage.">
+<Layout title="samtv1998 page">
 	<main>
 		<svg
 			class="astro-a"
@@ -33,10 +33,14 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to <span class="text-gradient">SamTV12345</span></h1>
-		<p class="instructions">
-			This is mostly a website to present my art and socials. Feel free to browse around 😀
-		</p>
+		<h1>Welcome to my <span class="text-gradient">island</span></h1>
+		<div class="island">
+			<img
+				src="/the-island.jpg"
+				alt="SamTV1998"
+				class="logo"/>
+		</div>
+
 		<ul role="list" class="link-card-grid">
 			<Card link='😈'
 				href="/socials"
@@ -44,25 +48,37 @@ import Card from '../components/Card.astro';
 				body="Get to know SamTV1998"
 			/>
 			<Card link="🎨"
-			href="https://docs.astro.build/"
+			href="/art"
 			title="Art"
-			body="Experience his art and style"
+			body="Experience art and style"
 		/>
 		<Card link="👚"
-		href="https://docs.astro.build/"
+		href="/clothes"
 		title="Clothes"
-		body="Clothing and accessories"
+		body="Welcome to my closet"
 	/>
 	<Card link="✍"
-	href="https://docs.astro.build/"
-	title="Clothes"
-	body="Thoughts and ideas"
+	href="/ideas"
+	title="Thoughts"
+	body="Explore my thoughts and ideas"
 />
 		</ul>
 	</main>
 </Layout>
 
 <style>
+	.island {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+	.logo {
+		width: 130px;
+		height: 130px;
+		border-radius: 10000px;
+		opacity: 1;
+		border: 2px solid rgb(255, 255, 255);
+	}
 	main {
 		margin: auto;
 		padding: 1rem;

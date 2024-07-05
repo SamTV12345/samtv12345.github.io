@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import ArtCard from "../components/ArtCard.astro";
+---
+<Layout title="My art library">
+    <main>
+        <div class="island">
+        </div>
+        <div class="image-list">
+            <div>
+                <h1 class="header-art">Art</h1>
+                <hr/>
+                <div class="arts">
+                    <ArtCard author="samtv1998" title="Minnie küsst Mickey" description="Minnie und Mickey küssen sich. Mickey hält Minnie in seinen Armen"
+                             href="/MinieKüsstMickey.jpg"
+                             date="04.07.2024"/>
+                    <hr/>
+                    <ArtCard author="samtv1998" title="Rose mit Delfinrizz" description="Eine Rose mit einem Delfinrizz, der sich um sie windet"
+                             href="/rose_rizz.jpg"
+                             date="04.07.2024" />
+                    <ArtCard date="03.07.2024" author="samtv1998" href="/zaehlerschrank.jpg" title="Zählerschrankliste für Port-Beschriftung" description="Eine hübsche Liste, die man sich in seinen Zählerschrank hängen kann."/>
+                    <hr/>
+                    <ArtCard author="samtv1998" title="Stillleben einer Landschaft"
+                             description={"Eingebettet in ein üppiges, grünes Tal, entfaltet sich eine majestätische Landschaft, gekrönt von einer Reihe hoch aufragender Berge, die ihre zerklüfteten Spitzen in den azurblauen Himmel recken"}
+                             href="/the-island.jpg"
+                             date="02.07.2024" />
+                    <hr/>
+                    <ArtCard author="samtv1998" title="Rose mit Delfinrizz" description="Eine Rose mit einem Delfinrizz, der sich um sie windet"
+                             href="/rose_rizz.jpg"
+                             date="30.06.2024" />
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+
+<style>
+    .arts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid gray;
+    }
+
+    .arts hr {
+        width: 20vw;
+
+    }
+
+    main {
+        background-color: #23262d;
+    }
+    .header-art {
+        margin-left: 20px;
+        color: white;
+    }
+    .image-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+    .image-list > div {
+        width: 50%;
+        background-color: #23262d;
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+    }
+    .island h1 {
+        text-align: center;
+        color: white;
+        font-family: 'Great Vibes', cursive;
+        font-size: 48px; /* Adjust size as needed */
+    }
+
+    @media (max-width: 800px){
+        .image-list > div {
+            width: 100%;
+        }
+        .arts hr {
+            width: 60vh;
+        }
+    }
+</style>
