@@ -1,0 +1,58 @@
+---
+interface Props {
+    href: string;
+    title: string;
+    link: string;
+    body: string;
+}
+
+const { href, title, body, link } = Astro.props;
+---
+
+
+	<a class="link-item" href={href} target="_blank">
+		<h2>
+			{title}
+		</h2>
+		<p>
+			{body}
+		</p>
+	</a>
+
+<style>
+    .link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-direction: column;
+    color: #333;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 60px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    width: 80vh;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 0px, rgb(232, 20, 75) 0px 8px 0px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.link-item > p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.link-item:hover {
+    background-color: #f0f0f0;
+}
+</style>

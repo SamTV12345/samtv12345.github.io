@@ -1,33 +1,17 @@
 {
-  "name": "public-html",
-  "private": true,
-  "version": "0.0.0",
+  "name": "proud-parallax",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "animate.css": "^4.1.1",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.27",
-    "react": "^18.2.0",
-    "react-animation-on-scroll": "^5.1.0",
-    "react-awesome-reveal": "^4.2.5",
-    "react-dom": "^18.2.0",
-    "react-tsparticles": "^2.12.1",
-    "tailwindcss": "^3.3.3"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.18",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.4",
-    "tsparticles": "^2.12.0",
-    "tsparticles-engine": "^2.11.1",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9",
-    "@babel/core": "^7.22.9"
+    "astro": "^4.11.5",
+    "@astrojs/check": "^0.7.0",
+    "typescript": "^5.5.3"
   }
 }

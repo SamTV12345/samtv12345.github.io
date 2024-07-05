@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Link from '../components/Link.astro'
+---
+
+
+<Layout title="My Socials ♥">
+    <main class="">
+        <div class="centered">
+            <h1><span class="text-gradient">SamTV12345</span></h1>
+            <Link title="GitHub" body="test" link="https://github.com/samtv12345" href="https://github.com/samtv12345"/>
+            <Link title="Snapchat" body=""/>
+
+            <Link title="Instagram"/>
+            <Link title="YouTube"/>
+            <Link title="Twitch"/>
+
+            <iframe aria-label="video iframe" title="url" class="TwitchVideo" src="https://player.twitch.tv/?channel=samtv1998&amp;parent=github.io&amp;autoplay=false" frameborder="0" scrolling="no" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="overflow: hidden;"></iframe>
+        </div>
+        <div id="background"></div>
+    </main>
+</Layout>
+
+
+<style>
+    h1 {
+        color: white;
+    }
+
+    #background {
+        position: absolute;
+        background-image: url("/bild_zugeschnitten.jpg");
+        width: 100vh;
+        height: 100vh;
+        background-size: cover;
+        filter: blur(100px);
+        z-index: -1;
+    }
+
+
+    main {
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        backdrop-filter: blur(100px);
+    }
+    .centered {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    }
+
+    main {
+        display: grid;
+        place-items: center;
+    }
+
+    main > div {
+    width: 80vw;
+    border-radius: 60px;
+    background-image: linear-gradient(rgb(236, 21, 103), rgb(223, 16, 18));
+    }
+</style>
