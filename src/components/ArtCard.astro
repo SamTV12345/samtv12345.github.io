@@ -16,16 +16,18 @@ const { href,title,description, author, date } = Astro.props;
         <h2>{author}</h2>
         <span>{date}</span>
     </div>
-    <img  src={href} alt={description}/>
+    <img class="content-image"  src={href} alt={description}/>
     <div class="image-text"><span>{title}</span> - <span>{description}</span>
     </div>
 </div>
 
 <style>
+    .content-image {
+        border-radius: 20px;
+    }
     .header {
         display: flex;
         flex-direction: row;
-        width: 20vw;
         gap: 5px;
         align-self: start;
         padding: 2px 2px 4px;
@@ -44,7 +46,6 @@ const { href,title,description, author, date } = Astro.props;
         margin-top: 5px;
     }
     .outer-div {
-        width: 20vw;
         display: inline-flex; /* Makes the div adapt to its content */
         flex-direction: column;
         align-items: center;
@@ -56,7 +57,7 @@ const { href,title,description, author, date } = Astro.props;
 
 
     img {
-        width: 20vw;
+        max-width: 60%;
         opacity: 1;
         border: 2px solid rgb(255, 255, 255);
         margin: 0; /* Ensure img has no external margin */
@@ -87,11 +88,5 @@ const { href,title,description, author, date } = Astro.props;
         display: flex;
         font-size: 1rem;
         margin: 0;
-    }
-
-    @media (max-width: 800px){
-        .outer-div, img {
-            width: 60vh
-        }
     }
 </style>

@@ -16,9 +16,6 @@ import ArtCard from "../components/ArtCard.astro";
                              href="/MinieKüsstMickey.jpg"
                              date="04.07.2024"/>
                     <hr/>
-                    <ArtCard author="samtv1998" title="Rose mit Delfinrizz" description="Eine Rose mit einem Delfinrizz, der sich um sie windet"
-                             href="/rose_rizz.jpg"
-                             date="04.07.2024" />
                     <ArtCard date="03.07.2024" author="samtv1998" href="/zaehlerschrank.jpg" title="Zählerschrankliste für Port-Beschriftung" description="Eine hübsche Liste, die man sich in seinen Zählerschrank hängen kann."/>
                     <hr/>
                     <ArtCard author="samtv1998" title="Stillleben einer Landschaft"
@@ -51,8 +48,7 @@ import ArtCard from "../components/ArtCard.astro";
     }
 
     .arts hr {
-        width: 20vw;
-
+        width: 100%
     }
 
     main {
@@ -70,7 +66,6 @@ import ArtCard from "../components/ArtCard.astro";
 
 
     .image-list > div {
-        width: 50%;
         background-color: #23262d;
         border-left: 1px solid gray;
         border-right: 1px solid gray;
@@ -82,12 +77,16 @@ import ArtCard from "../components/ArtCard.astro";
         font-size: 48px; /* Adjust size as needed */
     }
 
-    @media (max-width: 800px){
-        .image-list > div {
-            width: 100%;
+    @media (max-width: 600px) {
+        .arts {
+            margin-left: 10px;
+            margin-right: 10px;
         }
-        .arts hr {
-            width: 60vh;
+    }
+
+    @media (min-width: 600px) {
+        .image-list > div {
+            max-width: 40vh;
         }
     }
 </style>
