@@ -52,16 +52,18 @@ const { href,title,description, author, date } = Astro.props;
         justify-content: center;
         background-color: #23262d;
         border-radius: 10px;
+        max-width: 60%;
         padding: 0; /* Ensure no extra space is added */
     }
 
 
     img {
-        max-width: 60%;
+        max-width: 100%;
         opacity: 1;
         border: 2px solid rgb(255, 255, 255);
         margin: 0; /* Ensure img has no external margin */
     }
+
     .logo {
         align-self: start;
         width: 30px;
@@ -88,5 +90,17 @@ const { href,title,description, author, date } = Astro.props;
         display: flex;
         font-size: 1rem;
         margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .outer-div {
+            max-width: 90%;
+        }
+    }
+
+    @media(min-width: 600px) {
+        .outer-div {
+            max-width: 70%;
+        }
     }
 </style>
