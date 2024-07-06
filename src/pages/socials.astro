@@ -17,30 +17,43 @@ import GitHubLogo from '../components/Github.astro'
                 <img class="logo" src="/image.png"/>
             </div>
             <h1><span class="text-gradient">samtv1998</span></h1>
-            <Link title="GitHub" body=""  href="https://github.com/samtv12345">
+            <Link title="GitHub" body="" href="https://github.com/samtv12345">
                 <GitHubLogo/>
-             </Link>
-            <Link title="Snapchat" body=""  href="https://snapchat.com/add/samtv1998">
+            </Link>
+            <Link title="Snapchat" body="" href="https://snapchat.com/add/samtv1998">
                 <SnapLogo/>
             </Link>
 
             <Link title="Instagram" href="https://instagram.com/samtv1998/">
-                <InstaLogo/></Link>
+                <InstaLogo/>
+            </Link>
             <Link title="YouTube" href="https://www.youtube.com/@samtv1998">
-                <YouTubeLogo/></Link>
+                <YouTubeLogo/>
+            </Link>
             <Link title="Twitch" href="https://www.twitch.tv/samtv1998/">
-                <TwitchLogo/></Link>
+                <TwitchLogo/>
+            </Link>
 
-            <iframe aria-label="video iframe" title="url" class="TwitchVideo" src="https://player.twitch.tv/?channel=samtv1998&amp;parent=samtv12345.github.io&amp;autoplay=false" frameborder="0" scrolling="no" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="overflow: hidden;"></iframe>
+            <iframe aria-label="video iframe" title="url" class="TwitchVideo"
+                    src="https://player.twitch.tv/?channel=samtv1998&amp;parent=samtv12345.github.io&amp;autoplay=false"
+                    frameborder="0" scrolling="no"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
+                    style="overflow: hidden;"></iframe>
         </div>
-        <div id="background"></div>
     </main>
 </Layout>
 
 
 <style>
+    body {
+        background-image: url("/image.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     h1 {
         color: white;
+        margin-top: 6vh
     }
 
     iframe {
@@ -49,30 +62,34 @@ import GitHubLogo from '../components/Github.astro'
     }
 
     #header-logo > img:first-child {
-        width: 60vh;
+        width: 100%;
         border-radius: 50px;
         border: none;
         padding-top: 20px;
     }
+
     #header-logo {
-        position:relative;
+        position: relative;
     }
 
     .logo {
         position: absolute;
-        bottom: -9%;
-        right: 40%;
-
-    width: 130px;
-    height: 130px;
-    border-radius: 10000px;
-    opacity: 1;
-    border: 2px solid rgb(255, 255, 255);
+        right: 50%;
+        bottom: -6vh;
+        width: 130px;
+        height: 130px;
+        border-radius: 10000px;
+        opacity: 1;
+        transform: translateX(50%);
+        border: 2px solid rgb(255, 255, 255);
     }
+
     #background {
         position: absolute;
         background-image: url("/bild_zugeschnitten.jpg");
         width: 100vh;
+        top: 0;
+        left:0;
         height: 100vh;
         background-size: cover;
         filter: blur(100px);
@@ -80,20 +97,15 @@ import GitHubLogo from '../components/Github.astro'
     }
 
 
-    main {
-        height: 100vh;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        backdrop-filter: blur(100px);
-    }
+
 
     .centered {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
     main {
@@ -102,8 +114,7 @@ import GitHubLogo from '../components/Github.astro'
     }
 
     main > div {
-    width: 50vw;
-    border-radius: 60px;
-    background-image: linear-gradient(rgb(236, 21, 103), rgb(223, 16, 18));
+        border-radius: 60px;
+        background-image: linear-gradient(rgb(236, 21, 103), rgb(223, 16, 18));
     }
 </style>

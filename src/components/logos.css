@@ -1,0 +1,9 @@
+svg {
+    color: red;
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 10%;
+}
+
