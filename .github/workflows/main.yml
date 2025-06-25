@@ -21,13 +21,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Cache
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v4
         with:
           # A list of files, directories, and wildcard patterns to cache and restore
           path: node_modules
