@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="samtv1998 page">
+<Layout title="SamTV1998 homepage">
 	<main>
 		<svg
 			class="astro-a"
@@ -33,7 +33,7 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to my <span class="text-gradient">island</span></h1>
+		<h1>Welcome to my <span class="text-gradient">homepage</span></h1>
 		<div class="island">
 			<img
 				src="/the-island.jpg"
@@ -42,31 +42,25 @@ import Card from '../components/Card.astro';
 		</div>
 
 		<ul role="list" class="link-card-grid">
-			<Card link='😈'
+			<Card link=''
 				href="/socials"
 				title="Socials"
-				body="Get to know SamTV1998"
+				body="Contact me"
 			/>
-			<Card link="🎨"
-			href="/art"
-			title="Art"
-			body="Experience art and style"
-		/>
-		<Card link="👚"
-		href="/clothes"
-		title="Clothes"
-		body="Welcome to my closet"
-	/>
 	<Card link="✍"
-	href="/ideas"
-	title="Thoughts"
-	body="Explore my thoughts and ideas"
+	href="/art"
+	title="My art"
+	body="Explore my drawings"
 />
 		</ul>
 	</main>
 </Layout>
 
 <style>
+	main {
+		display: grid;
+		place-self: center;
+	}
 	.island {
 		display: flex;
 		justify-content: center;
@@ -90,7 +84,7 @@ import Card from '../components/Card.astro';
 	}
 	.astro-a {
 		position: absolute;
-		top: -32px;
+		top: 32px;
 		left: 50%;
 		transform: translatex(-50%);
 		width: 220px;
@@ -130,7 +124,6 @@ import Card from '../components/Card.astro';
 		color: rgb(var(--accent-light));
 	}
 	.link-card-grid {
-		height: 50vh;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
