@@ -24,8 +24,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Setup gnpm
+        uses: SamTV12345/gnpm-setup@main
       - name: Cache
         uses: actions/cache@v4
         with:
