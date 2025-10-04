@@ -40,7 +40,7 @@ jobs:
           # An explicit key for restoring and saving the cache
           key: ${{ runner.os }}-stackedit-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install dependencies
-        run: gnpm i
+        run: gnpm-0.0.6 i
       - name: Build app
         run: gnpm run build
       - name: Upload artifact
