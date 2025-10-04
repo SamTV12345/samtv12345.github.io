@@ -24,10 +24,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Setup gnpm
-        uses: SamTV12345/gnpm-setup@main
-        with:
-          version: 0.0.6
       - name: Cache
         uses: actions/cache@v4
         with:
@@ -39,6 +35,10 @@ jobs:
             /usr/local/bin/gnpm-0.0.6
           # An explicit key for restoring and saving the cache
           key: ${{ runner.os }}-stackedit-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: Setup gnpm
+        uses: SamTV12345/gnpm-setup@main
+        with:
+          version: 0.0.6
       - name: Install dependencies
         run: gnpm-0.0.6 i
       - name: Build app
