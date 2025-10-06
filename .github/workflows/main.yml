@@ -32,15 +32,15 @@ jobs:
             node_modules
             ~/.local/share/gnpm
             /usr/local/bin/gnpm
-            /usr/local/bin/gnpm-0.0.6
+            /usr/local/bin/gnpm-0.0.12
           # An explicit key for restoring and saving the cache
           key: ${{ runner.os }}-stackedit-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Setup gnpm
         uses: SamTV12345/gnpm-setup@main
         with:
-          version: 0.0.6
+          version: 0.0.12
       - name: Install dependencies
-        run: gnpm-0.0.6 i
+        run: gnpm-0.0.12 i
       - name: Build app
         run: gnpm run build
       - name: Upload artifact
