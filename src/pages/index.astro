@@ -90,6 +90,15 @@ import Card from '../components/Card.astro';
 </Layout>
 
 <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        scroll-behavior: smooth;
+        display: block;
+    }
     :root {
         --bg: #0b0b11;
         --card: #11121a;
@@ -102,8 +111,10 @@ import Card from '../components/Card.astro';
     }
 
     .hero {
+        min-height: 100vh;
         position: relative;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 3rem;
         margin: 0 auto;
         padding: clamp(2rem, 4vw, 3rem);
@@ -283,6 +294,10 @@ import Card from '../components/Card.astro';
     @keyframes slide {
         from { transform: translateX(0); }
         to { transform: translateX(-50%); }
+    }
+
+    .pusher {
+        height: 15%;
     }
 
     .footer {

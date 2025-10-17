@@ -33,18 +33,15 @@ import GitHubLogo from '../components/Github.astro'
             <Link title="Twitch" href="https://www.twitch.tv/samtv1998/">
                 <TwitchLogo/>
             </Link>
-
-            <iframe aria-label="video iframe" title="url" class="TwitchVideo"
-                    src="https://player.twitch.tv/?channel=samtv1998&amp;parent=samtv12345.github.io&amp;autoplay=false"
-                    frameborder="0" scrolling="no"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
-                    style="overflow: hidden;"></iframe>
         </div>
     </main>
 </Layout>
 
 
 <style>
+    main {
+        min-height: 100vh;
+    }
     body {
         background-image: url("/image.webp");
         background-repeat: no-repeat;
