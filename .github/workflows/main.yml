@@ -63,9 +63,9 @@ jobs:
               docker push ghcr.io/samtv12345/samtv.github.io:${{github.run_id}}
       - name: Write to dynamic tag
         run: |
-            sed -i "s|tag: .*|tag: \"${{ env.IMAGE_TAG }}\"|g" ./values-dynamic.yaml
+            sed -i "s|tag: .*|tag: \"${{github.run_id}}\"|g" ./helm/values-dynamic.yaml
             git config --global user.name 'github-actions'
             git config --global user.email 'noreply@github.com'
             git add .
-            git commit -m "chore: bump image to ${{ env.IMAGE_TAG }}"
+            git commit -m "chore: bump image to ${{github.run_id}}"
             git push origin main
