@@ -37,7 +37,9 @@ jobs:
         uses: swatinem/rust-cache@v2
 
       - name: Install Trunk
-        run: cargo binstall trunk
+        run: |
+          curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+          cargo binstall trunk
 
       - name: Check
         run: cargo check --target wasm32-unknown-unknown
