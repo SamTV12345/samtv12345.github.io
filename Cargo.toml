@@ -1,0 +1,16 @@
+[package]
+name = "samtv12345-homepage"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+js-sys = "0.3"
+leptos = { version = "0.8.17", features = ["csr"] }
+leptos_router = { version = "0.8.12" }
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+opt-level = "z"
+panic = "abort"
+strip = true

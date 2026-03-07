@@ -1,0 +1,8 @@
+[build]
+dist = "dist"
+filehash = false
+minify = "always"
+public_url = "/"
+
+[watch]
+watch = ["src", "style", "public", "index.html"]
