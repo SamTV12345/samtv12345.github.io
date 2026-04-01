@@ -6,7 +6,7 @@ edition = "2024"
 [dependencies]
 js-sys = "0.3"
 leptos = { version = "0.8.17", features = ["csr"] }
-leptos_router = { version = "0.8.12" }
+leptos_router = { version = "0.8.13" }
 
 [profile.release]
 codegen-units = 1
