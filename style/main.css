@@ -18,6 +18,12 @@
     --accent3: 86, 255, 201;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
@@ -72,12 +78,22 @@ body.route-home {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 3rem;
     margin: 0 auto;
     padding: clamp(2rem, 4vw, 3rem);
-    width: min(1100px, 100%);
+    width: 100%;
     color: var(--text);
     isolation: isolate;
+    overflow: hidden;
+}
+
+/* Keep the content centered & readable while the background spans the full viewport */
+.hero > .hero__header,
+.hero > .showcase,
+.hero > .marquee,
+.hero > .footer {
+    width: min(1100px, 100%);
 }
 
 .bg-orb {
@@ -663,6 +679,33 @@ body.route-art {
 }
 
 @media (max-width: 640px) {
+    .hero {
+        gap: 2rem;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .hero__title {
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+    }
+
+    .avatar {
+        width: 112px;
+        height: 112px;
+    }
+
+    .hero__cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        justify-content: center;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
     .marquee__track img {
         height: 96px;
     }
