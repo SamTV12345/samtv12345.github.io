@@ -174,7 +174,7 @@ pub fn B250ePage() -> impl IntoView {
                             <div><dt>"Ladestand"</dt><dd>{move || soc.get()}<small>"%"</small></dd></div>
                             <div><dt>"Kilometerstand"</dt><dd>{move || format_de(km.get())}<small>"km"</small></dd></div>
                             <div><dt>"Reifendruck vorne"</dt><dd>"2,55"<small>"/"</small>"2,63"<small>"bar"</small></dd></div>
-                            <div><dt>"Reifendruck hinten"</dt><dd>"2,48"<small>"/"</small>"2,60"<small>"bar"</small></dd></div>
+                            <div><dt>"Reichweite"</dt><dd>"117"<small>"km"</small></dd></div>
                         </dl>
                         <p class="stamp">
                             <strong>"10. Oktober 2026, 13:53 Uhr"</strong>
@@ -193,18 +193,39 @@ pub fn B250ePage() -> impl IntoView {
             <main>
                 <section>
                     <div class="wrap measure">
-                        <h2 class="reveal">"Drei Begründungen, keine Ursache"</h2>
-                        <p class="intro reveal" style="--i:1">"Warum die App keine Fahrzeugdaten mehr zeigt, hat mir Mercedes über Wochen unterschiedlich erklärt."</p>
+                        <h2 class="reveal">"Fünf Antworten, keine Ursache"</h2>
+                        <p class="intro reveal" style="--i:1">"Warum die App keine Fahrzeugdaten mehr zeigt, hat mir Mercedes über Wochen immer wieder anders erklärt."</p>
                     </div>
                     <div class="wrap">
                         <ol class="excuses">
-                            <li class="reveal"><span class="when">"Zuerst"</span><s class="strike"><span>"Das Fahrzeug ist zu alt."</span></s></li>
-                            <li class="reveal" style="--i:2"><span class="when">"Dann"</span><s class="strike"><span>"Das 2G-Netz wird abgeschaltet."</span></s></li>
+                            <li class="reveal"><span class="when">"Sommer 2026, Werkstatt"</span><s class="strike"><span>"Das Auto ist zu alt."</span></s></li>
+                            <li class="reveal" style="--i:1"><span class="when">"08.09.2026"</span><s class="strike"><span>"Das Digital Extra ist nicht mehr kompatibel."</span></s></li>
+                            <li class="reveal" style="--i:2">
+                                <span class="when">"14.09.2026, Telefon"</span>
+                                <div>
+                                    <s class="strike"><span>"Das 3G-Netz ist abgeschaltet."</span></s>
+                                    <p class="note">"Einen Tag später schreibt Mercedes selbst: Das Auto funkt über 2G, und das 2G-Netz ist in Deutschland weiterhin verfügbar."</p>
+                                </div>
+                            </li>
+                            <li class="reveal" style="--i:3"><span class="when">"17.09.2026, schriftlich"</span><s class="strike"><span>"Die Ursache ist nicht abschließend geklärt."</span></s></li>
                             <li class="reveal last" style="--i:4"><span class="when">"6. Oktober 2026"</span><q>"Derzeit nicht bekannt."</q></li>
                         </ol>
                         <p class="after-excuses measure reveal">
-                            "Am 2. November 2026 hat Mercedes den Fall trotzdem für „abschließend geprüft“ erklärt. Gleichzeitig zeigt die Datenauskunft: Das Kommunikationsmodul funktioniert und hat noch im Oktober Daten an Mercedes gesendet. Die Dienste werden nur nicht mehr bereitgestellt."
+                            "Am 2. November 2026 hat Mercedes den Fall trotzdem für „abschließend geprüft“ erklärt."
                         </p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap measure">
+                        <h2 class="reveal">"Was Mercedes' eigene Daten zeigen"</h2>
+                        <p class="intro reveal" style="--i:1">"Auf meinen Antrag nach Art. 15 DSGVO hat Mercedes mir die gespeicherten Daten zu mir und meinem Auto herausgegeben, wenn auch unvollständig. Schon darin steht, was mir am Telefon niemand gesagt hat."</p>
+                        <ul class="facts">
+                            <li class="reveal"><strong>"Das Auto sendet weiter."</strong>" Ladestand, Kilometerstand, Reichweite und Reifendruck kamen noch am 20., 22. und 23. September und zuletzt am 10. Oktober 2026 bei Mercedes an. Das Kommunikationsmodul funktioniert."</li>
+                            <li class="reveal" style="--i:1"><strong>"Die Abschaltung war ein Vorgang."</strong>" Am 18. Juli 2026 vermerkt Mercedes „Sundown of Remote Extras“. Ab dem 7. August kommen auch keine Statusmeldungen mehr in der App an."</li>
+                            <li class="reveal" style="--i:2"><strong>"Mercedes kennt das Muster."</strong>" In den eigenen Fallnotizen steht nach den Werkstattbesuchen: Funktionen „zunächst wieder verfügbar, nach ca. zwei Tagen jedoch erneut ausgefallen“."</li>
+                            <li class="reveal" style="--i:3"><strong>"Ein Dienst hängt fest."</strong>" Einer der Dienste meines Autos steht auf „ACTIVATION_PENDING“, obwohl als Sollzustand „ACTIVE“ eingetragen ist."</li>
+                        </ul>
                     </div>
                 </section>
 
@@ -216,12 +237,14 @@ pub fn B250ePage() -> impl IntoView {
                     <div class="wrap measure">
                         <ol class="timeline">
                             <li class="reveal" style="--i:1"><time datetime="2025-12">"Dez. 2025"</time><p>"Ich kaufe den B\u{a0}250\u{a0}e, Erstzulassung 12/2014. Das Auto wird meinem Mercedes-me-Konto zugeordnet."</p></li>
-                            <li class="reveal" style="--i:2"><time datetime="2026-01">"Jan. 2026"</time><p>"Service bei einer Mercedes-Vertragswerkstatt, einschließlich Prüfung der Hochvoltbatterie."</p></li>
+                            <li class="reveal" style="--i:2"><time datetime="2026-01">"Jan. 2026"</time><p>"Service bei einer Mercedes-Vertragswerkstatt. Dabei wird ein Fehler des Notrufsystems behoben, indem das Kommunikationsmodul neu programmiert wird. Danach funktioniert der Notruf wieder."</p></li>
                             <li class="key reveal" style="--i:0"><time datetime="2026-07-18">"18.07.2026"</time><p>"Mercedes stellt die Remote-Funktionen ein, darunter die Vorklimatisierung per App. Intern heißt der Vorgang "<strong>"„Sundown of Remote Extras“"</strong>"."</p></li>
                             <li class="reveal" style="--i:1"><time datetime="2026-08-07">"07.08.2026"</time><p>"Auch die Anzeige von Ladestand, Reichweite und Reifendruck in der App aktualisiert sich nicht mehr."</p></li>
-                            <li class="reveal" style="--i:2"><time datetime="2026-09-01">"01.09.2026"</time><p>"Erste Neucodierung des Kommunikationsmoduls in der Vertragswerkstatt. Die Funktionen laufen etwa zwei Tage."</p></li>
-                            <li class="reveal" style="--i:0"><time datetime="2026-09-08">"08.09.2026"</time><p>"Zweite Neucodierung, gleiches Ergebnis."</p></li>
+                            <li class="reveal" style="--i:0"><time datetime="2026-08-21">"21.08.2026"</time><p>"Die Werkstatt lehnt einen Ersatzwagen ab."</p></li>
+                            <li class="reveal" style="--i:2"><time datetime="2026-09-01">"01.09.2026"</time><p>"Erste Neucodierung des Kommunikationsmoduls in der Vertragswerkstatt, für 157,68 €. Die Funktionen laufen etwa zwei Tage. Die Kosten erstattet die Werkstatt im November aus Kulanz."</p></li>
+                            <li class="reveal" style="--i:0"><time datetime="2026-09-08">"08.09.2026"</time><p>"Zweite Neucodierung, kostenlos, gleiches Ergebnis."</p></li>
                             <li class="reveal" style="--i:1"><time datetime="2026-09-14">"14.09.2026"</time><p>"Am Telefon vergleicht die Kundenbetreuung mein Auto mit einem iPhone: Nach zehn Jahren könne man nicht mehr alle Funktionen erwarten."</p></li>
+                            <li class="reveal" style="--i:2"><time datetime="2026-09-15">"15.09.2026"</time><p>"Mercedes lehnt eine kostenlose Diagnose, einen Ersatzwagen und eine Kostenübernahme ab."</p></li>
                             <li class="reveal" style="--i:2"><time datetime="2026-09-16">"16.09.2026"</time><p>"Brief an den Vorstandsvorsitzenden."</p></li>
                             <li class="key reveal" style="--i:0"><time datetime="2026-10-06">"06.10.2026"</time><p>"Mercedes schreibt, die Ursache sei „derzeit nicht bekannt“, und bestätigt den iPhone-Vergleich schriftlich."</p></li>
                             <li class="key reveal" style="--i:1"><time datetime="2026-10-10">"10.10.2026"</time><p>"Laut Datenauskunft die letzte Übertragung des Fahrzeugs an Mercedes: Ladestand, Kilometerstand, Reifendruck."</p></li>
@@ -229,6 +252,14 @@ pub fn B250ePage() -> impl IntoView {
                             <li class="reveal" style="--i:0"><time datetime="2026-11-11">"11.11.2026"</time><p>"Antrag bei der Universalschlichtungsstelle des Bundes. Mercedes nimmt an Verbraucherschlichtungen grundsätzlich nicht teil."</p></li>
                             <li class="key reveal" style="--i:1"><time datetime="2026-11-19">"19.11.2026"</time><p>"Förmliche Aufforderung an Mercedes mit Frist bis zum 21. Dezember 2026."</p></li>
                         </ol>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap measure">
+                        <h2 class="reveal">"Spätestens 2028 ist ohnehin Schluss"</h2>
+                        <p class="reveal" style="--i:1">"Selbst wenn Mercedes die Dienste heute wieder einschaltet: Das Modul in meinem Auto funkt nur über 2G, und die deutschen Netzbetreiber schalten 2G im Jahr 2028 ab. Die Telekom zum 30. Juni, Vodafone im September, O2 in der zweiten Jahreshälfte. Einen Nachfolger für das Modul gibt es laut Mercedes nicht, ein Umstieg auf 4G oder 5G sei nicht möglich."</p>
+                        <p class="reveal" style="--i:2">"Damit hat jedes vernetzte Auto dieser Generation ein eingebautes Verfallsdatum, das nicht der Käufer bestimmt, sondern der Hersteller und die Netzbetreiber."</p>
                     </div>
                 </section>
 
