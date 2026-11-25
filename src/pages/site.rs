@@ -73,9 +73,8 @@ pub fn DatenschutzPage() -> impl IntoView {
                     <h2>"Kurz gesagt"</h2>
                     <p>"Diese Website verwendet keine Cookies, kein Tracking, keine Analysedienste und keine eingebetteten Inhalte Dritter. Schriftarten werden von diesem Server geladen, nicht von Google oder anderen Anbietern."</p>
 
-                    <h2>"Bereitstellung der Website und Server-Logs"</h2>
-                    <p>"Beim Aufruf der Website verarbeitet der Server technisch notwendige Daten: IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Adresse, übertragene Datenmenge, Browser und Betriebssystem sowie die zuvor besuchte Seite (Referrer). Das ist nötig, um die Website auszuliefern und ihren sicheren Betrieb zu gewährleisten. Rechtsgrundlage ist mein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO."</p>
-                    <p>"Gehostet wird die Website "<strong>"[Hoster ergänzen]"</strong>". Die Server-Logs werden nach "<strong>"[Speicherdauer ergänzen]"</strong>" gelöscht."</p>
+                    <h2>"Hosting und Server-Logs"</h2>
+                    <p>"Die Website läuft auf meinem eigenen Server. Damit sie ausgeliefert werden kann, verarbeitet der Server beim Aufruf technisch notwendige Daten wie deine IP-Adresse, die aufgerufene Adresse sowie Datum und Uhrzeit. Diese Daten werden nur für die Auslieferung der Seite genutzt. IP-Adressen werden nicht gespeichert. Rechtsgrundlage ist mein berechtigtes Interesse an einer funktionierenden Website nach Art. 6 Abs. 1 lit. f DSGVO."</p>
 
                     <h2>"Kontakt per E-Mail"</h2>
                     <p>"Wenn du mir eine E-Mail schreibst, verarbeite ich deine Adresse und den Inhalt der Nachricht, um sie zu beantworten (Art. 6 Abs. 1 lit. f DSGVO). Die Nachricht lösche ich, wenn sie erledigt ist und keine gesetzlichen Aufbewahrungspflichten bestehen."</p>
