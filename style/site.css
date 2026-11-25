@@ -1,0 +1,163 @@
+/* Startseite, Impressum, Datenschutz (Klasse .site, Body-Klasse route-site) */
+
+body.route-site {
+  margin: 0;
+  background: #F4F5F7;
+}
+
+.site {
+  --bg: #F4F5F7;
+  --ink: #15171C;
+  --muted: #5F6672;
+  --line: #D9DCE2;
+  --accent: #2E49D1;
+  --petrol: #0F2733;
+  --amber: #E8A317;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+.site main { flex: 1; }
+
+.site-wrap { width: min(980px, 100% - 2.5rem); margin-inline: auto; }
+
+:where(.site) a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 0.15s ease;
+}
+:where(.site) a:hover { text-decoration-color: var(--accent); }
+.site :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+:where(.site) h1, :where(.site) h2 { margin: 0; letter-spacing: -0.01em; }
+:where(.site) p { margin: 0 0 1em; }
+
+/* ---------- Kopf ---------- */
+.site-head { padding: clamp(4rem, 12vw, 8.5rem) 0 clamp(2.5rem, 6vw, 4rem); }
+
+.site-name {
+  font-size: clamp(3rem, 10.5vw, 7.4rem);
+  font-weight: 800;
+  font-stretch: 112%;
+  line-height: 0.92;
+  animation: stretch 1.1s cubic-bezier(.2,.75,.2,1) both;
+}
+@keyframes stretch {
+  from { font-stretch: 62%; letter-spacing: 0.02em; opacity: 0; }
+  40% { opacity: 1; }
+  to { font-stretch: 112%; letter-spacing: -0.01em; opacity: 1; }
+}
+
+.site-lede {
+  margin-top: 1.8rem;
+  max-width: 44ch;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  line-height: 1.45;
+  color: #2C3039;
+}
+
+.site-contact {
+  list-style: none;
+  padding: 0;
+  margin: 1.8rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.6rem;
+  font-weight: 600;
+}
+
+/* ---------- Abschnitte ---------- */
+.site-section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
+.site-section h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  font-stretch: 100%;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+.projects { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.project { padding: 1.3rem 0 1.2rem; border-bottom: 1px solid var(--line); }
+.project-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  text-decoration: none !important;
+}
+.project-name {
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  font-weight: 750;
+  font-stretch: 108%;
+  line-height: 1.15;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 0.15s ease;
+}
+.project-link:hover .project-name { text-decoration-color: var(--accent); }
+.project-stack { color: var(--muted); font-size: 0.95rem; font-stretch: 90%; white-space: nowrap; }
+.project-text { margin: 0.35rem 0 0; max-width: 62ch; color: #3A3F49; }
+
+.site-more { margin-top: 1.4rem; font-weight: 600; }
+.site-plain { max-width: 60ch; }
+
+/* ---------- Hinweis auf die Fallseite ---------- */
+.feature-card {
+  display: block;
+  text-decoration: none !important;
+  background: var(--petrol);
+  color: #F6F8F9;
+  border-radius: 22px 22px 22px 6px;
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+  transition: transform 0.2s ease;
+}
+.feature-card:hover { transform: translateY(-2px); }
+.feature-title {
+  display: block;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 850;
+  font-stretch: 115%;
+  line-height: 1.05;
+}
+.feature-text { display: block; margin-top: 0.8rem; max-width: 58ch; color: #C9D5DB; }
+.feature-card::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin-top: 1.3rem;
+  background: var(--amber);
+  border-radius: 2px;
+}
+
+/* ---------- Rechtliches ---------- */
+.legal .site-wrap > * { max-width: 68ch; }
+.legal h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); font-weight: 800; font-stretch: 110%; margin-bottom: 1.6rem; }
+.legal h2 { font-size: 1.1rem; color: var(--ink); margin: 2rem 0 0.5rem; }
+.legal-back { font-weight: 600; margin-bottom: 2rem; }
+.legal-stand { margin-top: 2.4rem; color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- Fuß ---------- */
+.site-foot { border-top: 1px solid var(--line); padding: 1.6rem 0 2.2rem; color: var(--muted); font-size: 0.95rem; }
+.site-foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.site-foot nav { display: flex; gap: 1.4rem; }
+
+@media (max-width: 600px) {
+  .project-link { flex-direction: column; gap: 0.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-name { animation: none; }
+  .feature-card { transition: none; }
+}

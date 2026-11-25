@@ -1263,6 +1263,8 @@ dependencies = [
  "js-sys",
  "leptos",
  "leptos_router",
+ "wasm-bindgen",
+ "web-sys",
 ]
 
 [[package]]
