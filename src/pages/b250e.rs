@@ -71,10 +71,11 @@ fn count_up(signal: WriteSignal<u32>, target: u32, ms: f64) {
     }
 }
 
-/// Blendet alle `.reveal`-Elemente ein, sobald sie ins Bild scrollen.
-fn observe_reveals(on_counter: impl Fn() + 'static) {
-    let doc = document();
-    let Ok(nodes) = doc.query_selector_all(".cs-page .reveal") else {
+/// Blendet alle `.reveal`-Elemente unterhalb von `root` ein, sobald sie ins
+/// Bild scrollen. Wird erst aufgerufen, wenn die Seite im DOM hängt, damit es
+/// auch bei Navigation innerhalb der App (ohne Neuladen) funktioniert.
+fn observe_reveals(root: &web_sys::Element, on_counter: impl Fn() + 'static) {
+    let Ok(nodes) = root.query_selector_all(".reveal") else {
         return;
     };
 
@@ -128,15 +129,29 @@ pub fn B250ePage() -> impl IntoView {
     let (soc, set_soc) = signal(0u32);
     let (km, set_km) = signal(0u32);
 
+    let page_ref = NodeRef::<leptos::html::Div>::new();
+    let started = StoredValue::new(false);
+
+    // Läuft, sobald das Wurzelelement wirklich eingehängt ist, auch nach einem
+    // Klick auf einen internen Link.
     Effect::new(move |_| {
+        let Some(root) = page_ref.get() else {
+            return;
+        };
+        if started.get_value() {
+            return;
+        }
+        started.set_value(true);
+        window().scroll_to_with_x_and_y(0.0, 0.0);
         count_up(set_soc, 84, 1600.0);
         count_up(set_km, 144_838, 1600.0);
-        observe_reveals(move || count_up(set_days, days_total, 1400.0));
+        observe_reveals(&root, move || count_up(set_days, days_total, 1400.0));
     });
 
     view! {
-        <div class="cs-page js" lang="de">
+        <div class="cs-page js" lang="de" node_ref=page_ref>
             <header class="cs-hero">
+                <div class="cs-hero-pin">
                 <div class="wrap cs-hero-grid">
                     <div>
                         <h1>
@@ -171,6 +186,7 @@ pub fn B250ePage() -> impl IntoView {
                 <div class="wrap counter reveal" style="--i:8">
                     <output>{move || days.get()}</output>
                     <span>"Tage ohne vernetzte Dienste, seit Mercedes die Remote-Funktionen abgeschaltet hat"</span>
+                </div>
                 </div>
             </header>
 

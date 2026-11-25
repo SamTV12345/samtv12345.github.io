@@ -76,7 +76,7 @@
     color: var(--paper);
     padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3rem, 7vw, 5.5rem);
     position: relative;
-    overflow: hidden;
+    overflow: clip;
   }
   .cs-hero::after { /* faint arc like a speedometer dial */
     content: "";
@@ -307,6 +307,120 @@
   .cs-page.js .excuses li.last q { display: inline-block; }
   .cs-page.js .excuses li.last.in q { animation: thud 0.6s cubic-bezier(.3,1.6,.5,1) 0.5s both; }
   @keyframes thud { from { transform: scale(1.18); opacity: 0; } to { transform: none; opacity: 1; } }
+
+
+  /* ---------- Scroll-gesteuerte Animationen (wie auf Apple-Produktseiten) ----------
+     Browser mit Scroll-Timelines (Chrome, Edge, Safari) koppeln die Animationen
+     direkt an die Scroll-Position. Alle anderen nutzen das einmalige Einblenden
+     per IntersectionObserver von oben. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+
+      /* Hero bleibt stehen, während man scrollt, und gibt den Blick frei */
+      .cs-hero { height: 185vh; padding: 0; }
+      .cs-hero-pin {
+        position: sticky; top: 0;
+        min-height: 100vh;
+        display: flex; flex-direction: column; justify-content: center;
+        padding: 4vh 0;
+      }
+      /* Auf schmalen Bildschirmen passt der Hero nicht in eine Bildschirmhöhe: dort nicht anheften */
+      @media (max-width: 860px) {
+        .cs-hero { height: auto; padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3rem, 7vw, 5.5rem); }
+        .cs-hero-pin { position: static; min-height: 0; padding: 0; }
+        .cs-page.js .cs-hero h1, .cs-page.js .cs-hero .lede.reveal, .cs-page.js .cluster.reveal { animation-range: 0 120vh; }
+        .cs-page.js .counter.reveal { animation-timeline: view(); animation-range: entry 0% cover 30%; }
+      }
+      .cs-hero h1 { font-size: clamp(2.4rem, min(6.2vw, 9vh), 5.25rem); }
+      .cs-hero .lede { margin-top: 1.2rem; font-size: clamp(1rem, 2.4vh, 1.3125rem); }
+      .cs-hero .counter { margin-top: clamp(1rem, 3vh, 2.6rem); }
+      .cs-page.js .cs-hero h1 {
+        animation: hero-title linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 85vh;
+        transform-origin: left center;
+      }
+      @keyframes hero-title { to { transform: scale(0.86) translateY(-6vh); opacity: 0.25; } }
+
+      .cs-page.js .cs-hero .lede.reveal {
+        opacity: 1; transform: none; transition: none;
+        animation: hero-lede linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 60vh;
+      }
+      @keyframes hero-lede { to { opacity: 0; transform: translateY(-3vh); } }
+
+      .cs-page.js .cluster.reveal {
+        opacity: 1; transform: none; transition: none;
+        animation: hero-cluster linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 85vh;
+      }
+      @keyframes hero-cluster {
+        from { transform: translateY(6vh); }
+        to { transform: translateY(-4vh) scale(1.06); box-shadow: 0 0 0 1px #E8A31744, 0 30px 80px -20px #000a; }
+      }
+
+      /* Die Empfangsbalken gehen beim Scrollen einer nach dem anderen aus */
+      .signal span { animation: bar-off linear both; animation-timeline: scroll(root); }
+      .signal span:nth-child(4) { animation-range: 5vh 20vh; }
+      .signal span:nth-child(3) { animation-range: 20vh 35vh; }
+      .signal span:nth-child(2) { animation-range: 35vh 50vh; }
+      .signal span:nth-child(1) { animation-range: 50vh 65vh; }
+      @keyframes bar-off { to { background: #2A4A59; } }
+
+      .cs-page.js .counter.reveal {
+        opacity: 0; transform: none; transition: none;
+        animation: hero-counter linear both;
+        animation-timeline: scroll(root);
+        animation-range: 45vh 80vh;
+      }
+      @keyframes hero-counter {
+        from { opacity: 0; transform: translateY(4vh) scale(0.94); }
+        to { opacity: 1; transform: none; }
+      }
+
+      /* Alles andere wird beim Scrollen Stück für Stück aufgedeckt */
+      .cs-page.js main .reveal {
+        opacity: 1; transform: none; transition: none;
+        animation: scrub-in linear both;
+        animation-timeline: view();
+        animation-range: entry 5% cover 30%;
+      }
+      @keyframes scrub-in {
+        from { opacity: 0; transform: translateY(70px) scale(0.97); filter: blur(4px); }
+        to { opacity: 1; transform: none; filter: none; }
+      }
+
+      /* Durchstreichen folgt dem Scrollen */
+      .excuses s.strike, .excuses s.strike > span { transition: none; }
+      .excuses s.strike { animation: strike-color linear both; animation-timeline: view(); animation-range: cover 35% cover 55%; }
+      .excuses s.strike > span { animation: strike-line linear both; animation-timeline: view(); animation-range: cover 35% cover 55%; }
+      @keyframes strike-color { from { color: var(--petrol); } to { color: #7E8E97; } }
+      @keyframes strike-line { from { background-size: 0% 0.1em; } to { background-size: 100% 0.1em; } }
+      .cs-page.js .excuses li.last.in q { animation: none; }
+      .cs-page.js .excuses li.last q {
+        animation: last-word linear both;
+        animation-timeline: view();
+        animation-range: entry 30% cover 50%;
+        transform-origin: left center;
+      }
+      @keyframes last-word { from { transform: scale(1.35); opacity: 0; letter-spacing: 0.04em; } to { transform: none; opacity: 1; letter-spacing: 0; } }
+
+      /* Der Reichweiten-Block öffnet sich zur vollen Breite */
+      .cs-page.js .pull.reveal {
+        animation: pull-open linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 45%;
+      }
+      @keyframes pull-open {
+        from { clip-path: inset(0 14% round 22px); transform: scale(0.96); opacity: 0.4; }
+        to { clip-path: inset(0 0 round 22px 22px 22px 6px); transform: none; opacity: 1; }
+      }
+      .pull blockquote { animation: pull-text linear both; animation-timeline: view(); animation-range: entry 20% cover 50%; }
+      @keyframes pull-text { from { transform: translateY(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+    }
+  }
 
   /* ---------- Responsive ---------- */
   @media (max-width: 860px) {
