@@ -193,7 +193,7 @@ pub fn B250ePage() -> impl IntoView {
             <main>
                 <section>
                     <div class="wrap measure">
-                        <h2 class="reveal">"Fünf Antworten, keine Ursache"</h2>
+                        <h2 class="reveal">"Sechs Antworten, keine Ursache"</h2>
                         <p class="intro reveal" style="--i:1">"Warum die App keine Fahrzeugdaten mehr zeigt, hat mir Mercedes über Wochen immer wieder anders erklärt."</p>
                     </div>
                     <div class="wrap">
@@ -209,9 +209,16 @@ pub fn B250ePage() -> impl IntoView {
                             </li>
                             <li class="reveal" style="--i:3"><span class="when">"17.09.2026, schriftlich"</span><s class="strike"><span>"Die Ursache ist nicht abschließend geklärt."</span></s></li>
                             <li class="reveal last" style="--i:4"><span class="when">"6. Oktober 2026"</span><q>"Derzeit nicht bekannt."</q></li>
+                            <li class="reveal press" style="--i:5">
+                                <span class="when">"November 2026, gegenüber der Presse"</span>
+                                <div>
+                                    <s class="strike"><span>"Die Netzbetreiber unterstützen kein 2G mehr."</span></s>
+                                    <p class="note">"So begründete Mercedes den Ausfall auf die Anfrage eines Journalisten. Mir hatte Mercedes am 15. September schriftlich das Gegenteil mitgeteilt: Das 2G-Netz sei in Deutschland weiterhin verfügbar. Die Netzbetreiber schalten 2G erst 2028 ab, und mein Auto hat noch im Oktober über dieses Netz Daten an Mercedes gesendet."</p>
+                                </div>
+                            </li>
                         </ol>
                         <p class="after-excuses measure reveal">
-                            "Am 2. November 2026 hat Mercedes den Fall trotzdem für „abschließend geprüft“ erklärt."
+                            "Zwischen der fünften und der sechsten Antwort, am 2. November 2026, hat Mercedes den Fall für „abschließend geprüft“ erklärt."
                         </p>
                     </div>
                 </section>
